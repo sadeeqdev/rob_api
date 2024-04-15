@@ -1,5 +1,6 @@
 require("./connection/mongo.conn")();
 const reviewRoutes = require("./routes/review.routes")
+const gallerryRoutes = require("./routes/gallery.routes")
 
 
 const UPLOADS = __dirname + "/uploads";
@@ -14,7 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use("/api/v1/review",reviewRoutes(UPLOADS));
+app.use("/api/v1/review",reviewRoutes());
+app.use("/api/v1/gallery",gallerryRoutes(UPLOADS));
 app.use("/uploads",express.static(UPLOADS))
 
 app.listen(4000, () => {

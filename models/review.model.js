@@ -4,7 +4,6 @@ const reviewSchema = new Schema({
     name: { type: String, },
     title: { type: String, },
     message: { type: String, },
-    file: { type: String },
     rating: { type: Number },
 }, { timestamps: true });
 
