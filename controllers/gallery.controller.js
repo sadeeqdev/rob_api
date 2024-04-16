@@ -11,11 +11,13 @@ class GalleryController {
           name: data.name,
           file: image.filename,
           path: image.path,
+          type: image.mimetype,
         };
         const gallery = new galleryModel(newData);
         const result = await gallery.save();
         galleryData.push(result);
       }
+      console.log(galleryData);
       return { ok: true, data: galleryData };
     } catch (error) {
       return { ok: false, message: error.message };

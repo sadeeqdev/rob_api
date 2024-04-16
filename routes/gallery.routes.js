@@ -23,6 +23,7 @@ module.exports = (UPLOADS) => {
   api.post("/", upload.array("photo"), async (req, res) => {
     try {
       let imageData = JSON.parse(req.body.meta);
+      console.log(req.files);
       const { ok, data, message } = await GalleryController.addGallery(
         imageData,
         req.files
