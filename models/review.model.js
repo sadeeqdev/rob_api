@@ -1,10 +1,14 @@
 const { model, Schema } = require("mongoose");
 
-const reviewSchema = new Schema({
-    name: { type: String, },
-    title: { type: String, },
-    message: { type: String, },
+const reviewSchema = new Schema(
+  {
+    name: { type: String },
+    title: { type: String },
+    state: { type: String },
+    message: { type: String },
     rating: { type: Number },
-}, { timestamps: true });
+  },
+  { timestamps: true }
+);
 
 module.exports = model("Review", reviewSchema);
